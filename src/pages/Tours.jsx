@@ -4,6 +4,7 @@ import { Col, Container, Row } from "reactstrap";
 import SearchBar from "../shared/SearchBar";
 import tourData from "../assets/data/tours";
 import TourCard from "../shared/TourCard";
+import "../styles/tour.css";
 
 const Tours = () => {
   const [pageCount, setpageCount] = useState(0);
