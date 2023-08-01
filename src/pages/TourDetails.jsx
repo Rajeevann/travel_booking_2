@@ -5,6 +5,7 @@ import { Col, Container, Form, ListGroup, Row } from "reactstrap";
 import calculateavgRating from "../utils/avgRating";
 import "../styles/tour-details.css";
 import avatar from "../assets/images/avatar.jpg";
+import Booking from "../components/Booking/Booking";
 
 const TourDetails = () => {
   const { id } = useParams();
@@ -54,7 +55,7 @@ const TourDetails = () => {
                         class="ri-star-s-fill"
                         style={{ color: "var(--secondary-color)" }}
                       />
-                      {calculateavgRating === 0 ? null : avgRating}
+                      {avgRating === 0 ? null : avgRating}
                       {totalRating === 0 ? (
                         "Not rated"
                       ) : (
@@ -150,6 +151,9 @@ const TourDetails = () => {
                 </div>
                 {/* ===== Tour Deatils Section End */}
               </div>
+            </Col>
+            <Col lg="4">
+              <Booking tour={tour} avgRating={avgRating} />
             </Col>
           </Row>
         </Container>
